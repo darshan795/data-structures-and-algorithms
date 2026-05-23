@@ -1,3 +1,5 @@
+import java.util.*;
+
 public class leetcode{
     
     
@@ -160,29 +162,114 @@ public class leetcode{
         return arr;
 
     }
-    public static void lc118(int arr[][]){
-        System.out.println("darshan");
+    public static ArrayList<Integer> lc119(int n){
+        ArrayList<ArrayList<Integer>>list=new ArrayList();
+        ArrayList<Integer>list1=new ArrayList();
+
+        for(int i=0;i<=n;i++){
+            list.add(new ArrayList());
+            for(int j=0;j<i+1;j++){
+                list.get(i).add(0);
+            
+          
+            }
+        }
+
+        for(int i=0;i<=n;i++){
+            for(int j=0;j<i+1;j++){
+                if(i==j || j==0){
+                    list.get(i).set(j,1);
+                }else{
+                    list.get(i).set(j,list.get(i-1).get(j)+list.get(i-1).get(j-1));
+                }
+            }
+        }
+    System.out.println(list);
+        
+
+        
+       
+
+        return list.get(n);
+    
+        
     }
+    public static int   lc861(int[][]arr){
+        int n=arr.length;
+        int m=arr[0].length;
+        for(int i=0;i<n;i++){
+            if(arr[i][0]==0){
+                for(int j=0;j<m;j++){
+                    if(arr[i][j]==0)arr[i][j]=1;
+                    else arr[i][j]=0;
+                }
+            }
+        }
+        print(arr);
+        System.out.println("printing the second array");
+        //let's do the second  part of the  question that is 
+        for(int j=0;j<m;j++){
+            int noo=0,noz=0;
+            for(int i=0;i<n;i++){
+                if(arr[i][j]==0)noz++;
+                else noo++;
+                
+            }
+            if(noz>noo){
+                for(int i=0;i<n;i++){
+                    if(arr[i][j]==0)arr[i][j]=1;
+                    else arr[i][j]=0;
+                }
+
+            }
+        }
+        print(arr);
+        //now the third part that is binary conversion of the decimals in the array
+        int sum=0;
+        for(int i=0;i<n;i++){
+            for(int j=0;j<m;j++){
+                double power=Math.pow(2,m-j-1);
+                sum+=arr[i][j]*power;
+
+
+            }
+        }
+
+        return sum;
+    }
+  public static boolean lc240(int[][] arr,int target){
+    int n=arr.length;
+    int m=arr[0].length;
+    for(int i=0;i<n;i++){
+        for(int j=0;j<m;j++){
+            if(arr[i][j]==target){
+                return true;
+            }
+        }
+    }
+    
+    return false;
+
+
+  }
     
     public static void main(String[]args){
         System.out.println("hello world.");
-        int arr[][]={{1,2,3},{4,5,6},{7,8,9}};
-        int arr2[][]={{1,2,3,4},{5,6,7,8},{9,10,11,12},{13,14,15,16}};
-        // for(int i=0;i<arr[i].length;i++){
-        //     for(int j=0;j<arr.length;j++){
-        //         System.out.println(arr[j][i]);
-        //     }
-        // }    
-        // lc867(arr);
-        // transposetransform(arr);
-        // lc48(arr);
-        // waveprinting(arr2);
-    //    int result[][]= lc59(3);
-    lc118(arr);
+        // ArrayList<Integer>list=lc119(0  );
+        // System.out.println(list);
 
-       
-    //    print(result);
-
+        // int[][] arr= {{0,0,1,1},{1,0,1,0},{1,1,0,0}};
+        // print(arr);
+        // //to solve this  lc861 question..
+        // System.out.println("printing the new array here!!");
+        // int result=lc861(arr);
+        // System.out.println(result);
+     
+        int[][] arr={{1,4,7,11,15},{2,5,8,12,19},{3,6,9,16,22},{10,13,14,17,24},{18,21,23,26,30}};
+        print(arr);
+        boolean result=lc240(arr, 5);
+        System.out.println(result);
+     
 
         
     }
