@@ -252,6 +252,69 @@ public class leetcode{
 
 
   }
+  public static boolean lc240ii(int[][]arr,int target){
+    int n=arr.length;
+    int m=arr[0].length;
+    for(int i=0;i<n;i++){
+        for(int j=0;j<m;j++){
+            if(arr[i][j]==target)return true;
+            if(arr[i][j]>target)break;
+
+
+        }
+
+    }
+    return false;
+  }
+  public  static int max(int i,int j){
+    if(i<j){
+        return i;
+    }else{
+        return j;
+    }
+  }
+  public static int lc11(int[] arr){
+    int n=arr.length;
+    int maxArea=0;
+    for(int i=0;i<n;i++){
+    for(int j=i;j<n;j++){
+        int maxh=max(arr[i],arr[j]);
+        System.out.println(j-i+1);
+        int area=maxh*(j-i);
+        if(area>maxArea){
+            maxArea=area;
+            
+        }
+
+        
+
+     
+
+    }
+    
+}
+
+
+    return maxArea; 
+
+  }
+  public static int lc11II(int[] arr){
+    int i=0;
+    int j=arr.length-1;
+     int maxArea=0;
+    while(i<j){
+         int maxh=max(arr[i],arr[j]);
+        int area=maxh*(j-i);
+        if(area>maxArea){
+            maxArea=area;
+        }
+        i++;
+    
+         
+    }
+
+    return maxArea;
+  }
     
     public static void main(String[]args){
         System.out.println("hello world.");
@@ -265,11 +328,13 @@ public class leetcode{
         // int result=lc861(arr);
         // System.out.println(result);
      
-        int[][] arr={{1,4,7,11,15},{2,5,8,12,19},{3,6,9,16,22},{10,13,14,17,24},{18,21,23,26,30}};
-        print(arr);
-        boolean result=lc240(arr, 5);
-        System.out.println(result);
-     
+        int[] arr={1,8,6,2,5,4,8,3,7};
+        int result=lc11II(arr);
+        System.out.println("this is the result");
+        System.out.println(result)  ;
+        //this is the container with most water
+        
+
 
         
     }
