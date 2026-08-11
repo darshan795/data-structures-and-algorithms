@@ -7,8 +7,25 @@ public class leetcodearrays {
         }
         System.out.println();
     }
+    public static int[] lc1(int arr[],int target){
+        System.out.println("darshan");
+        int n=arr.length;
+        int[] newarr=new int[2];
+        for(int i=0;i<n;i++){
+            for(int j=i+1;j<n;j++){
+                if(arr[i]+arr[j]==target){
+                    System.out.println(i+" "+j);
+                    newarr[0]=i;
+                    newarr[1]=j;
+                }
+            }
+        }
+        return newarr;
+        
+    }
     public static void lc11(int arr[]){
         
+
     }
     public static void lc26(int arr[]){
         System.out.println("remove the  duplicates in the  sorted arrays  i gueess");
@@ -56,10 +73,18 @@ public class leetcodearrays {
     }
     public static void main(String[]args){
         System.out.println("darshan");
-        int[] arr={0,1,0,3,12};
+        int[] arr={2,7,11,15};
+        int[] arr1={3,2,4};
+        int target1=6;
+
+
         print(arr);
-        lc283(arr);
+        // lc283(arr);
+        int target=9;
+        int result[]=lc1(arr,target);
+        int result1[]=lc1(arr1,target1);
         print(arr);
+        print(result1);
 
         
        
