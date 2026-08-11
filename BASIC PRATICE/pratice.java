@@ -135,7 +135,7 @@ public class pratice{
         return  newarr;
 
     }
-    public static void transposeii(int[][] arr){
+    public static void transposeii(int[][] arr){ // arethere any tnh
         int n=arr.length;
         for(int i=0;i<n;i++){
             for(int j=0;j<n;j++){
@@ -148,7 +148,23 @@ public class pratice{
         }
 
     }
-    public static void rotate90(int[][] arr){
+    public static void transposeiii(int[][] arr){
+        int i=0;
+        int j=0;
+        int n1=arr.length;
+        int n2=arr[0].length;
+
+        while(i<n1 && j<n2 && i<=j){
+            if(i==j)continue;
+            int temp=arr[i][j];
+            arr[i][j]=arr[j][i];
+            arr[j][i]=temp;
+            i++;
+            j++;
+
+        }
+    }
+    public static void rotate90orlc48(int[][] arr){
         //here we will focus on the rotate 90 degreee..
         //reversing the arrays;
         transposeii(arr);
@@ -253,8 +269,9 @@ public class pratice{
         System.out.println("darshan");
         int[][] arr={{1,2,3},{4,5,6},{7,8,9}};
         int n=5;
-        ArrayList<ArrayList<Integer>>list=pascal(5);
-        System.out.println(list);
+        print2d(arr);
+        transposeiii(arr);
+        print2d(arr);
 
      
         

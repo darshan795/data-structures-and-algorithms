@@ -315,25 +315,77 @@ public class leetcode{
 
     return maxArea;
   }
+  public static boolean lc240iii(int[][] arr,int target){
+    int i=0;
+    int m=arr[0].length;
+    int n=arr.length;
+    int j=m-1;
+    while(i>=0 && i<n && j<m && j>=0){
+        if(target==arr[i][j])return true;
+        if(target>arr[i][j] ){
+            i++;
+            
+        }else{
+            j--;
+        }
+    }
+    return false;
+
+  }
+  public static int lc11iii(int[] arr){
+    //three hints one to use the while loop 
+    //the second is to help with two pointer
+    //  
+    int i=0;
+    int j=arr.length-1;
+    int maxArea=0;
+
+    while(i<j){
+        int maxh=max(arr[i], arr[j]);
+        int area=maxh*(j-i);
+        // System.out.println(area);
+        // System.out.println(maxArea);
+        if(area>maxArea){
+
+            maxArea=area;
+        
+        }
+        if(arr[i]<arr[j])i++;
+        else if(arr[i]==arr[j])j--;
+        else j--;
+
+        
+    }
+    return maxArea;
+  }
+    public static boolean lc74(int[][] arr,int target){
+        int n=arr.length;
+        int m=arr[0].length;
+  
+        int i=0;
+        int j=0;
+        System.out.println("checking it");
+        while(i<n && j<m){
+            System.out.println("checking the loops");
+            if(arr[i][j]==target)return true;
+            
+            if(arr[i][j]<target && arr[i+1][j]<target)i++;
+            if(arr[i][j]<target)j++;
+            if(arr[i][j]>target)break;
+
+        }
+
+
+        return false;
+    }
+
     
     public static void main(String[]args){
-        System.out.println("hello world.");
-        // ArrayList<Integer>list=lc119(0  );
-        // System.out.println(list);
-
-        // int[][] arr= {{0,0,1,1},{1,0,1,0},{1,1,0,0}};
-        // print(arr);
-        // //to solve this  lc861 question..
-        // System.out.println("printing the new array here!!");
-        // int result=lc861(arr);
-        // System.out.println(result);
-     
-        int[] arr={1,8,6,2,5,4,8,3,7};
-        int result=lc11II(arr);
-        System.out.println("this is the result");
-        System.out.println(result)  ;
-        //this is the container with most water
-        
+       
+        int[][] arr={{1,3,5,7},{10,11,16,20},{23,30,34,60}};
+        int target=13;
+        boolean result=lc74(arr, target);
+        System.out.println(result);
 
 
         

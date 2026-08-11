@@ -52,12 +52,12 @@ class BubbleSort{
         return true;
     }
     public static void stringSorting(String str){
-            // System.out.println(str);
+            
             int n=str.length();
-            // System.out.println(n);
+          
             String newstr="";
             for(int i=0;i<n;i++){
-                // System.out.print(str.charAt(i)+" ");
+              
                 if(str.charAt(i)>='X'){
                     newstr=newstr+str.charAt(i);
                 }
