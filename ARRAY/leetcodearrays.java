@@ -119,11 +119,43 @@ public class leetcodearrays {
 
 
     }
+    public static void lc75(int[] arr){
+        int i=0;
+        int j=0;
+        int k=arr.length-1;
+        while(j<k){
+            // if(arr[i]==0)i++;
+            // if(arr[j]==1)j++;
+            // if(arr[k]==2)k--;
+            if(arr[j]==0){
+                int temp=arr[i];
+                arr[i]=arr[j];
+                arr[j]=temp;
+                i++;
+                j++;
+            
+
+            }
+              if(arr[j]==2){
+                int temp=arr[k];
+                arr[k]=arr[j];
+                arr[j]=temp;
+                k--;
+                j++;
+            
+
+            }
+
+        }
+        
+
+    }
     public static void main(String[]args){
         System.out.println("darshan");
-        int[] arr={0,1,0,1,0,1};
+        int[] arr={2,0,2,1,1,0};
+
         print(arr);
-        sorting0and1(arr);
+        lc75(arr);
         print(arr);
 
 
