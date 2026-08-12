@@ -23,10 +23,33 @@ public class leetcodearrays {
         return newarr;
         
     }
-    public static void lc11(int arr[]){
-        
+     public static void reverse(int arr[]){
+        //using two pointers aproach to reverse the arrays
+        int i=0;
+        int j=arr.length-1;
+        while(i<j){
+            int temp=arr[i];
+            arr[i]=arr[j];
+            arr[j]=temp;
+            i++;
+            j--;
 
-    }
+        }
+
+
+     }
+     public static void reversepart(int arr[],int i,int j){
+          while(i<j){
+            int temp=arr[i];
+            arr[i]=arr[j];
+            arr[j]=temp;
+            i++;
+            j--;
+
+        }
+        
+     }
+   
     public static void lc26(int arr[]){
         System.out.println("remove the  duplicates in the  sorted arrays  i gueess");
         int n=arr.length;
@@ -71,21 +94,40 @@ public class leetcodearrays {
         
 
     }
+    public static void sorting0and1(int[] arr){
+        System.out.println(arr[0]);
+        int i=0;
+        int j=arr.length-1;
+        while(i<j){
+            
+            if(arr[i]==0)i++;
+
+            else if(arr[j]==1)j--;
+            else if(arr[i]==1){
+                int temp=arr[i];
+                arr[i]=arr[j];
+                arr[j]=temp;
+                i++;
+                j--;
+            }
+        }
+        
+    }
+    public static void  lc189(int arr){
+        //rotate the given array by k steps motherfuckr
+        
+
+
+    }
     public static void main(String[]args){
         System.out.println("darshan");
-        int[] arr={2,7,11,15};
-        int[] arr1={3,2,4};
-        int target1=6;
-
-
+        int[] arr={0,1,0,1,0,1};
         print(arr);
-        // lc283(arr);
-        int target=9;
-        int result[]=lc1(arr,target);
-        int result1[]=lc1(arr1,target1);
+        sorting0and1(arr);
         print(arr);
-        print(result1);
 
+
+     
         
        
 
