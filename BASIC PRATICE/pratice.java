@@ -265,14 +265,33 @@ public class pratice{
             return list;
             
         }
+        public static void bubbleSort(int arr[]){
+            int n=arr.length;
+            //for further optitmizations
+
+            
+            for(int i=0;i<n;i++){
+                for(int j=0;j<n-1-i;j++){//this became the optimized one mother fucker!!
+                    if(arr[j]>arr[j+1]){
+                        int temp=arr[j];
+                        arr[j]=arr[j+1];
+                        arr[j+1]=temp;
+
+                    }
+                }
+            }
+            
+        }
+        public static void selectionSort(int[]arr){
+            //this is the selectiion sort code]
+            
+        }
     public static void main(String[]args){
         System.out.println("darshan");
-        int[][] arr={{1,2,3},{4,5,6},{7,8,9}};
-        int n=5;
-        print2d(arr);
-        transposeiii(arr);
-        print2d(arr);
-
+        int[] arr={5,4,3,2,1};
+        print(arr);
+        bubbleSort(arr);
+        print(arr);
      
         
 

@@ -150,6 +150,8 @@ public class leetcodearrays {
         
 
     }
+    
+
     public static void main(String[]args){
         System.out.println("darshan");
         int[] arr={2,0,2,1,1,0};
