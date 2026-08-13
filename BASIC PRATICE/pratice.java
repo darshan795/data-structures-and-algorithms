@@ -283,15 +283,41 @@ public class pratice{
             
         }
         public static void selectionSort(int[]arr){
-            //this is the selectiion sort code]
+            //this is the selectiion sort code]\
+            int n=arr.length;
+            for(int i=0;i<n;i++){
+                int pos=i;
+                int min=arr[i];
+                for(int j=i;j<n;j++){
+                    if(arr[j]<min){
+                        min=arr[j];
+                        pos=j;
+
+
+                    }
+                    
+                
+                    
+                }
+               int temp=arr[i];
+               
+               arr[i]=min;
+               arr[pos]=temp;
+               System.out.println("swapping indexes are "+i);
+               System.out.println("non swapping indexes are "+pos);
+
+
+            }   
+
             
         }
     public static void main(String[]args){
         System.out.println("darshan");
         int[] arr={5,4,3,2,1};
-        print(arr);
-        bubbleSort(arr);
-        print(arr);
+        int[] arr2={1,3,5,2,4,6};
+        print(arr2);
+        selectionSort(arr2);
+        print(arr2);
      
         
 
