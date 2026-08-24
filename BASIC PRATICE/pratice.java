@@ -311,13 +311,28 @@ public class pratice{
 
             
         }
+        public static void insertionSort(int [] arr){
+            //this is insertion sort
+          int n=arr.length;
+          for(int i=0;i<n-1;i++){
+            for(int  j=i+1;j>0;j--){
+                if(arr[j]<arr[j-1]){
+                    int temp=arr[j];
+                    arr[j]=arr[j-1];
+                    arr[j-1]=temp;
+                }
+            }
+          }
+        }
     public static void main(String[]args){
         System.out.println("darshan");
         int[] arr={5,4,3,2,1};
         int[] arr2={1,3,5,2,4,6};
-        print(arr2);
-        selectionSort(arr2);
-        print(arr2);
+        print(arr);
+        // selectionSort(arr2);
+        insertionSort(arr);
+
+        print(arr);
      
         
 

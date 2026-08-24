@@ -1,3 +1,4 @@
+import java.util.*;
 public class SelectionSort {
     public static void printarr(int[] arr){
         int n=arr.length;
@@ -83,10 +84,17 @@ public class SelectionSort {
         
 
     }
-    public static int lc169ii(int[]arr){
+   
+    public static int lc169ii(int arr[]){
+        Arrays.sort(arr);
+        int n=arr.length;
 
-        return 0;
 
+
+        
+
+        
+        return arr[n/2];
     }
     public static void main(String[]args){
         System.out.println("darshan");
@@ -94,6 +102,10 @@ public class SelectionSort {
         int[] arr={2,2,1,1,1,2,2};
         int[] arr2={3,2,3};
         printarr(arr);
+   
+        int result=lc169ii(arr);
+        printarr(arr);
+        System.out.println(result);
 
         
         
