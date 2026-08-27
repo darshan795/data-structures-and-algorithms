@@ -96,16 +96,66 @@ public class SelectionSort {
         
         return arr[n/2];
     }
+    public static void replacewit1ton(int arr[]){
+    int n=arr.length;
+    int[] newarr=new int[n];
+    printarr(newarr);
+    int count=0;
+    for(int i=0;i<n;i++){
+        
+        int min=Integer.MAX_VALUE;
+        int pos=0;
+        for(int j=0;j<n;j++){
+            if(newarr[j]<0)continue;
+            else{
+                if(min>arr[j]){
+                    min=arr[j];
+                    pos=j;
+                    
+                }
+            }
+        }
+        newarr[pos]=count;
+        count--;
+
+    }
+    // for(int i=0;i<n;i++){
+    //     newarr[i]=-newarr[i];
+    // }
+    printarr(newarr);
+
+
+
+     
+
+    }
+    public static void lc455(int arr1[],int[]arr2){
+        int n=arr1.length;
+        int m=arr2.length;
+        int i=0,j=0;
+        int count=0;
+        while(i<n && j<m){
+            if(arr2[j]>=arr1[i]){
+                count++;
+                i++;
+                j++;
+            }else{
+                j++;
+            }
+        }
+        System.out.println(count);
+
+        
+    }
+
     public static void main(String[]args){
         System.out.println("darshan");
-        // int[] arr={5,4,2,3,1,6,7};
-        int[] arr={2,2,1,1,1,2,2};
-        int[] arr2={3,2,3};
-        printarr(arr);
-   
-        int result=lc169ii(arr);
-        printarr(arr);
-        System.out.println(result);
+     int[] arr1={1,2 };
+     int[] arr2={1,2,3};
+     lc455(arr1, arr2);
+
+
+
 
         
         
