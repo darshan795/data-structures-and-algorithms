@@ -170,18 +170,94 @@ public class binarySearch{
 
     public static void smallestmissingii(int[] arr){
         int n=arr.length;
-        boolean flag=false;
+        int ans=-1;
+        int i=0;
+        int j=n-1;
+        while(i<=j){
+            int mid=(i+j)/2;
+            if(arr[mid]==mid){
+                i=mid+1;
+            }else{
+                ans=mid;
+                j=mid-1;
+            }
+
+        }
+        System.out.println(ans);
         
     }
 
+    //assignment question 
+
+   public  static int count1(int[] arr){
+    int n=arr.length;
+    int i=0;
+    int j=n-1;
+    while(i<=j){
+        int mid=(i+j)/2;
+
+        if(arr[mid]==0){
+            if(arr[mid+1]==1){
+                return n-mid-1;
+            }else{
+                i=mid+1;
+            }
+        }else{
+            if(arr[mid-1]==0){
+                return n-mid;
+            }else{
+                j=mid-1;
+            }
+        }
+    }
+
+   
+
+    return n;
+   }
+   public static int count1ii(int arr[]){
+    int n=arr.length;
+    int i=0;
+    int j=n-1;
+    while(i<j){
+        if(arr[i]==0 && arr[i+1]!=1){
+            i++;
+        }
+        else if(arr[i+1]==1){
+            return j-i;
+
+
+        }
+
+
+    }
+
+
+    return 0;
+   }
+
+   public static int lc441(int n){
+    int i=1;
+    int j=n;
+    while(i<=j){
+        int mid=(i+j)/2;
+        
+    }
+    return  0;
+
+   }
     public static void main(String[]args){
         System.out.println("Darshan");
-        // int[] arr={1,2,4,5,9,15,18,21,24};
-        // int result=lowerboundii(arr, 1);
-        // System.out.println("successfully printed the result "+ result);
-        // int[] arr={0,1,2,3,4,8,9,12};
-        int [] arr={1,2,2,3,3,3,3,4,4,5,8,9,12};
-        lastOccurence(arr, 12);
+        // int[] arr={0,1,3,4,6,7,8,9,11};
+        // smallestmissingii(arr);
+   
+        int[] arr={0,0,0,0,0};
+        int result=count1(arr);
+        System.out.println(result);
+
+        
+        
+       
 
         
 
